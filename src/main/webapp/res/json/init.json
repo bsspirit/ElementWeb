@@ -1,0 +1,6 @@
+{
+"water":{"desc":"","items":{"water":{"desc":"是你","name":"water"}},"name":"water"},
+"air":{"desc":"","items":{"air":{"desc":"","name":"air"},"ccc":{"desc":"","name":"ccc"}},"name":"air"},
+"earth":{"desc":"","items":{"earth":{"desc":"","name":"earth"}},"name":"earth"},
+"fire":{"desc":"","items":{"fire":{"desc":"","name":"fire"}},"name":"fire"}
+}

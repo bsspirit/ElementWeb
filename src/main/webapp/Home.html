@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Home</title>
+<link media="all" type="text/css" href="res/css/main1.css" rel="stylesheet"></link>
+<script src="res/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="res/js/jquery-ui-1.8.4.custom.min.js" type="text/javascript"></script>
+<script src="res/js/jquery.json-2.2.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var jsonUrl = 'http://localhost:8080/ElementsWeb/json/init';
+		//var jsonUrl = 'res/json/init.json';
+		var jsonData;
+		$.getJSON(jsonUrl, function(json) {
+			jsonData = json;
+			init();			
+		});
+		
+		function init(){			
+			stage1();
+			//stage2('water',null);
+			//stage3('air','fire');
+		}
+		
+		//stage 1
+		function stage1(){	
+			// div
+			$('.layout-content-right').hide();
+			$('.layout-content-left').hide();
+			$('.layout-content').show();
+			
+			var size=0;
+			$.each(jsonData,function(i, e){
+				size+=1;
+			});
+
+			// clear data
+			$('.layout-content-left').empty();
+			$('.layout-content-right').empty();
+			$('.layout-content').empty();
+		
+			// data
+			$.each(jsonData,function(i,e){
+				$('.layout-content').append('<div class="cat"><img src="res/image/'+i+'.gif" alt="'+i+'" class="catImg"></img></div>');
+			});
+			
+			// action
+			$('.cat > .catImg').click(function(){
+				stage2(null,this.alt);
+			});
+	
+			
+			// layout
+			if(size<=4){
+				$('.layout-main').css("margin-left",-280);
+				$('.layout-left').css('width',280);
+				$('.layout-right').css('width',280);
+				$('.layout-content').css('width',80);
+			} else if(size<=8){
+				$('.layout-main').css('margin-left',-240);
+				$('.layout-left').css('width',240);
+				$('.layout-right').css('width',240);
+				$('.layout-content').css('width',160);
+			} else {
+				$('.layout-main').css('margin-left',-200);
+				$('.layout-left').css('width',200);
+				$('.layout-right').css('width',200);
+				$('.layout-content').css('width',240);
+			}
+		}
+		
+		//stage 2
+		function stage2(leftname, rightname){
+			// div
+			$('.layout-content').hide();
+			$('.layout-content-left').show();
+			$('.layout-content-right').show();
+			
+			// clear data
+			$('.layout-content').empty();
+			$('.layout-content-left').empty();
+			$('.layout-content-right').empty();
+			
+			// data
+			if(leftname == null){
+				$.each(jsonData,function(i, e){
+					$('.layout-content-left').append('<div class="cat"><img src="res/image/'+i+'.gif" alt="'+i+'" class="catImg"></img></div>');
+				});
+			} else {
+				$('.layout-content-left').append('<div class="cat"><img src="res/image/'+leftname+'.gif" alt="'+leftname+'" class="catImg"><div class="items"><ul></ul></div></img></div>');
+				$.each(jsonData,function(i, e){
+					if(i == leftname){
+						$.each(e.items,function(i2,e2){
+							$('.layout-content-left .items ul').append('<li><img src="res/image/'+i2+'.gif" class="itemImg" alt="'+i2+'"></img></li>');		
+						});
+					}
+				});
+			}
+			if(rightname == null){
+				$.each(jsonData,function(i, e){
+					$('.layout-content-right').append('<div class="cat"><img src="res/image/'+i+'.gif" alt="'+i+'" class="catImg"></img></div>');
+				});
+			} else {
+				$('.layout-content-right').append('<div class="cat"><img src="res/image/'+rightname+'.gif" alt="'+rightname+'" class="catImg"><div class="items"><ul></ul></div></img></div>');
+				$.each(jsonData,function(i, e){
+					if(i == rightname){
+						$.each(e.items,function(i2,e2){
+							$('.layout-content-right .items ul').append('<li><img src="res/image/'+i2+'.gif" class="itemImg" alt="'+i2+'"></img></li>');		
+						});
+					}
+				});	
+			}
+			
+			// action
+			$('.layout-content-right .cat .catImg').click(function(){
+				if(leftname!=null && rightname!=null){
+					stage2(leftname,null);
+				} else if(leftname==null && rightname!=null){
+					stage1();
+				} else if(leftname!=null && rightname==null){
+					stage2(leftname,this.alt);
+				}
+			});			
+			$('.layout-content-left .cat .catImg').click(function(){
+				if(leftname!=null && rightname!=null){
+					stage2(null,rightname);
+				} else if(leftname!=null && rightname==null){
+					stage1();
+				} else if(leftname==null && rightname!=null){
+					stage2(this.alt,rightname);
+				}
+			});
+			
+			var arr = [];
+			$('.cat .items .itemImg').click(function(){
+				if(arr[0] == null){
+					arr[0] = this.alt;
+				} else {
+					arr[1] = this.alt;
+					
+					//var url = 'res/json/equal.json';
+					var url = 'http://localhost:8080/ElementsWeb/json/equal';
+					var data = {"item1":arr[0],"item2":arr[1]};
+					$.getJSON(url,data,function(json){
+						if(json!=null){
+							stage3(json);
+						}
+					});
+					arr = [];
+				}
+			});			
+			
+			// layout
+			$('.layout-main').css("margin-left",-60);
+			$('.layout-left').css('width',60);
+			$('.layout-right').css('width',60);
+		}
+		
+		//stage3
+		function stage3(json){
+			// div
+			$('.layout-content').show();
+			$('.layout-content-left').hide();
+			$('.layout-content-right').hide();
+			
+			// clear data
+			$('.layout-content').empty();
+			$('.layout-content-left').empty();
+			$('.layout-content-right').empty();
+			
+			// data
+			$.each(json,function(i,e){
+				$('.layout-content').append('<div class="cat"><img src="res/image/'+i+'.gif" alt="'+i+'" class="catImg"></img><div class="item"></div></div>');
+				$.each(e.items,function(i2,e2){
+					$('.item').append('<img src="res/image/'+i2+'.gif" class="itemImg"></img>');
+				});
+				
+				mergeJSON(jsonData,json);
+			});
+			
+			//action
+			$('.layout-mid').one('click',function(){
+				stage1();
+			});
+			
+			//layout
+			$('.layout-main').css("margin-left",-280);
+			$('.layout-left').css('width',280);
+			$('.layout-right').css('width',280);
+			$('.layout-content').css('width',80);
+		}
+		
+		function mergeJSON(json1, json2){
+			$('#json1').html($.toJSON(json1));
+			$('#json2').html($.toJSON(json2));
+			var elementArray = [];
+			$.each(json1,function(i,e){
+				$.each(json2,function(i2,e2){
+					if(i==i2){//first level
+						var itemsArray = [];
+						$.each(e.items,function(i3,e3){
+							$.each(e2.items,function(i4,e4){
+								if(i3==i4){//second level
+								} else {
+									itemsArray.push(e4);
+								}
+							});
+						});
+						
+						$.map(itemsArray,function(data,idx){
+							e.items[data.name] = data;
+						});							
+					} else {
+						elementArray.push(e2);
+					}						
+				});
+			});
+			$.map(elementArray,function(data,idx){
+				if(!isInObject(data.name,json1)){
+					json1[data.name]=data;
+				}
+			});
+			$('#merge').html($.toJSON(json1));
+		}
+		function isInObject(val, obj){
+			var tmp = false;
+			$.each(obj,function(i,e){
+				if(val == i){
+					tmp = true;
+				}
+			});
+			return tmp;
+		}
+	});
+</script>
+</head>
+<body>
+	<div class="frame">
+		<div class="layout-up"></div>
+		<div class="layout-mid">
+			<div class="layout-main">
+				<div class="layout-content"></div>
+				<div class="layout-content-left"></div>
+				<div class="layout-content-right"></div>
+				<div class="layout-right">&nbsp;</div>
+			</div>
+			<div class="layout-left">&nbsp;</div>
+		</div>
+		<div class="c"></div>
+		<div class="layout-down"></div>
+	</div>
+	<div id="log">
+		<div id="json1"></div><br/>
+		<div id="json2"></div><br/>
+		<div id="merge"></div><br/>
+	</div>
+</body>
+</html>

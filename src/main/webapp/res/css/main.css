@@ -1,0 +1,35 @@
+body,li,ul,ol{margin:0;padding:0;}
+li{display:inline;list-style:none outside none;}
+
+.l{float:left;}
+.c{clear:both;}
+.hidden{display:none;}
+.clearfix {display:block;}
+
+.frame{width:400px;height:400px;background-color:#fcc;}
+.layout-up{height:55px;width:100%;background-color:#34B65F;}
+.layout-down{height:55px;width:100%;background-color:#34B65F;}
+
+.layout-mid{width:100%;height:290px;background-color:#ccaf3e;}
+.layout-main{margin-left:-170px;background-color:#667788;float:right;}
+
+.layout-left{width:160px;background-color:#933333;float:left;}
+.layout-right{width:160px;background-color:#933333;float:left;}
+.layout-content{width:80px;background-color:#66ee44;float:left;}
+
+.catImg{width:60px;}
+.cat{margin:10px;}
+.itemImg{width:20px;}
+
+/**
+400px*400px frame
+60px*60px cat
+margin 10px
+
+height:55px + (60px*4) + (10px*5) + 55px = 400px
+width :160px + 60px + 10px*2 + 160px = 400px
+
+**/
+
+
+

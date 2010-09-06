@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" sourcepath="M2_REPO/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.4/commons-lang-2.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry kind="src" path="/Elements"/>
+	<classpathentry kind="var" path="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar" sourcepath="M2_REPO/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty/6.1.4/jetty-6.1.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty/6.1.4/jetty-6.1.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-management/6.1.4/jetty-management-6.1.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-management/6.1.4/jetty-management-6.1.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/jetty-util/6.1.4/jetty-util-6.1.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/jetty-util/6.1.4/jetty-util-6.1.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/sf/json-lib/json-lib/2.3/json-lib-2.3-jdk15.jar" sourcepath="M2_REPO/net/sf/json-lib/json-lib/2.3/json-lib-2.3-jdk15-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/ch/qos/logback/logback-classic/0.9.18/logback-classic-0.9.18.jar" sourcepath="M2_REPO/ch/qos/logback/logback-classic/0.9.18/logback-classic-0.9.18-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/ch/qos/logback/logback-core/0.9.18/logback-core-0.9.18.jar" sourcepath="M2_REPO/ch/qos/logback/logback-core/0.9.18/logback-core-0.9.18-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/mx4j/mx4j/3.0.1/mx4j-3.0.1.jar" sourcepath="M2_REPO/mx4j/mx4j/3.0.1/mx4j-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar" sourcepath="M2_REPO/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/mortbay/jetty/servlet-api-2.5/6.1.4/servlet-api-2.5-6.1.4.jar" sourcepath="M2_REPO/org/mortbay/jetty/servlet-api-2.5/6.1.4/servlet-api-2.5-6.1.4-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/wicket/wicket/1.4.9/wicket-1.4.9.jar" sourcepath="M2_REPO/org/apache/wicket/wicket/1.4.9/wicket-1.4.9-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

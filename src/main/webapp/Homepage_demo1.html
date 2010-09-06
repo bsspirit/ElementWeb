@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Elements Homepage</title>
+<script src="res/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="res/js/jquery-ui-1.8.4.custom.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#img1').bind('click',function(){
+			$('<img id="leftImg1" src="res/image/1.gif"/>').insertAfter('#left');
+		});
+
+		$('#img2').bind('click',function(){
+			$('<img id="leftImg1" src="res/image/2.jpg"/>').insertAfter('#left');
+		});
+
+		$('#img3').bind('click',function(){
+			$('<img id="leftImg1" src="res/image/3.gif"/>').insertAfter('#left');
+		});
+
+		$('#img4').bind('click',function(){
+			$('<img id="leftImg1" src="res/image/4.jpg"/>').insertAfter('#left');
+		});
+
+		$('#img1').draggable();
+	});
+
+	function equal(){
+		$('<img id="rightImg" src="res/image/4.jpg"/>').insertAfter('#right');
+	}
+	
+	function getJsonInit(){
+		var jsonUrl = 'http://localhost:8080/ElementsWeb/json/init';
+		//var jsonUrl = 'res/json/init.json';
+		$.getJSON(jsonUrl, function(json) {
+				$('#log').empty();
+				var html='';
+				$.each(json,function(index, entry){
+					html += entry['name'];
+					$('#log').html(html);
+				});
+				
+			}  
+        );  
+		
+	}
+</script>
+</head>
+<body>
+	
+	<img id="img1" src="res/image/1.gif"/>&nbsp;&nbsp;
+	<img id="img2" src="res/image/2.jpg"/>&nbsp;&nbsp;
+	<img id="img3" src="res/image/3.gif"/>&nbsp;&nbsp;
+	<img id="img4" src="res/image/4.jpg"/>&nbsp;&nbsp;
+	
+	<hr/><br/>
+	<div id="left"></div>
+	
+	<p>
+		<a onclick="equal()">炼丹</a>
+	<p/>
+	
+	<hr/><br/>
+	<div id="right"></div>
+	
+	<hr/>
+	<a onclick="getJsonInit()">初始化</a>
+	<div id="log"></div>
+	
+</body>
+</html>

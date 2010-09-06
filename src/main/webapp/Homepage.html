@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Elements Homepage</title>
+<link media="all" type="text/css" href="res/css/main.css" rel="stylesheet"></link>
+<script src="res/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="res/js/jquery-ui-1.8.4.custom.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.cat > img').addClass('catImg');
+		$('li > img').addClass('itemImg');
+
+		$('.catImg').each(function(){
+			$(this).next().hide();
+		});
+
+		$('.catImg').toggle(function(){
+			$(this).next().slideDown().show('slow');
+
+		},function(){
+			$(this).next().slideUp().hide('slow');
+		});
+
+		$('.catImg').click(function(){
+			$('#layout').removeClass().addClass('layout2');
+			//$(this).clone().insertAfter('#layout');
+		});
+		
+		$.each($.browser,function(i, val) {
+			$("<div>" + i + " is " + val +"</div>").appendTo(document.body);
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div class="frame">
+		<div id="layout" class="layout1">
+			<div class="cat">
+				<img src="res/image/1.gif"></img>
+				<div class="items">
+					<ul>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="cat">
+				<img src="res/image/2.jpg"></img>
+				<div class="items">
+					<ul>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="cat">
+				<img src="res/image/3.gif"></img>
+				<div class="items">
+					<ul>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="cat">
+				<img src="res/image/4.jpg"></img>
+				<div class="items">
+					<ul>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+						<li><img src="res/image/2.jpg"></img></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="log"></div>
+	
+</body>
+</html>

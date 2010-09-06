@@ -1,0 +1,129 @@
+air,1
+  air,1
+  dust,0
+  steam,0
+  ash,0
+  storm,0
+earth,1
+  earth,1
+  stone,0
+  metal,0
+  sand,0
+  glass,0
+  clay,0
+  limestone,0
+  fertilizer,0
+fire,1
+  fire,1
+  lava,0
+  sulfur,0
+  coal,0
+  oil,0
+  saltpetre,0
+water,1
+  water,1
+  alcohol,0
+  swamp,0
+  vodka,0
+aether,0
+  energy,0
+  life,0
+  egg,0
+  electricity,0
+  seeds,0
+  blood,0
+  sex,0
+  poison,0
+animals,0
+  bird,0
+  dinosaur,0
+  turtle,0
+  snake,0
+  lizard,0
+  fish,0
+  whale,0
+  beast,0
+  domestic animal,0
+  dolphin,0
+civilization,0
+  bricks,0
+  ceramics,0
+  cement,0
+  wood,0
+  paper,0
+  field,0
+  concrete,0
+  fabric,0
+  clothes,0
+  book,0
+plants,0
+  grass,0
+  tree,0
+  tobacco,0
+  reed,0
+  fern,0
+goods,0
+  wool,0
+  meat,0
+  milk,0
+  wheat,0
+  cigarette,0
+  feather,0
+  beer,0
+  flour,0
+  dough,0
+  bread,0
+humans,0
+  human,0
+  wizard,0
+  alcoholic,0
+  demigod,0
+  hunter,0
+  corpse,0
+  assassin,0
+  warrior,0
+  hero,0
+mythical,0
+  ghost,0
+  golem,0
+  phoenix,0
+  dragon,0
+  thunder bird,0
+  treant,0
+  vampire,0
+  werewolf,0
+  zombie,0
+  ghoul,0
+primitive,0
+  weeds,0
+  bacteria,0
+  mushroom,0
+  plankton,0
+  moss,0
+  worm,0
+  butterfly,0
+  beetle,0
+  shell,0
+  scorpion,0
+technology,0
+  boiler,0
+  steam engine,0
+  tools,0
+  hut,0
+  weapon,0
+  poisoned weapon,0
+  house,0
+  skyscraper,0
+  gunpowder,0
+  firearm,0
+transportation,0
+  wheel,0
+  boat,0
+  cart,0
+  ship,0
+  chariot,0
+  locomotive,0
+  car,0
+  steam ship,0
+  frigate,0
+  airplane,0
